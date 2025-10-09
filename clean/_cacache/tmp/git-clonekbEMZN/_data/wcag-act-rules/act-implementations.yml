@@ -1,0 +1,163 @@
+### EXAMPLE, using all permitted fields
+### Fields with a * are optional
+# - name: Acme Accessibility Tool
+#   homepage: https://acme.com/acme-tool/ *
+#   hidden: true # This lists the implementation as "coming soon".
+#   version: 4.5 *
+#   vendor: Acme Corp
+#   vendorHomepage: https://acme.com/ *
+#   uniqueKey: acme-tool
+#   type: Automated Tool | Semi-automated tool | Test methodology
+#   standards: # Add as needed, remove what is not applicable
+#     - WAI-ARIA 1.2
+#     - WCAG 2.1 Level A, AA, AAA
+#   jsonReport: https://acme.com/acme-tool-earl.json
+#   description: |
+#     Some text here, which may contain markdown. *
+
+- name: Alfa (fully automated)
+  homepage: https://alfa.siteimprove.com/
+  version: 0.57.2
+  vendor: Siteimprove
+  vendorHomepage: https://www.siteimprove.com/
+  uniqueKey: alfa
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/Siteimprove/alfa-act-r/main/reports/alfa-automated-report.json
+
+- name: Alfa (semi-automated)
+  homepage: https://alfa.siteimprove.com/
+  version: 0.57.2
+  vendor: Siteimprove
+  vendorHomepage: https://www.siteimprove.com/
+  uniqueKey: alfa-assisted
+  type: Semi-automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/Siteimprove/alfa-act-r/main/reports/alfa-assisted-report.json
+
+- name: Axe-core
+  homepage: https://www.npmjs.com/package/axe-core/
+  version: "4.8.3"
+  vendor: Deque Systems
+  vendorHomepage: https://deque.com/
+  uniqueKey: axe-core
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/dequelabs/act-reports-axe/main/reports/axe-core.json
+  description: |
+    ACT Rules are tested using a canary version of axe-core, which can be accessed by installing <code>axe-core@next</code> from NPM. 
+    For these results, all rules including “experimental” rules are enabled. 
+    Checks with “unsupported” in its ID are disabled, which deal with issues of accessibility support issues which ACT Rules do not account for, often by design.
+
+- name: Axe DevTools Pro
+  homepage: https://www.deque.com/axe/devtools/
+  vendor: Deque Systems
+  vendorHomepage: https://deque.com/
+  uniqueKey: axe-devtools-pro
+  type: Semi-automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/dequelabs/act-reports-axe/main/reports/axe-devtools-combined.json
+  description: |
+    Axe DevTools Pro combines the automated results of axe-core, and results from
+    axe Intelligent Guided Test (IGT) tools. Tools can produced multiple issue types.
+    The ID of each issue type is given as the name of the procedure, with the tool 
+    that returns it in brackets. For example `alt-text-not-meaningful (Images)` is 
+    the `alt-text-not-meaningful` issue type reported by the `Images` tool.
+
+- name: Equal Access Accessibility Checker
+  homepage: https://www.ibm.com/able/toolkit/
+  version: 3.1.42-rc.0
+  vendor: IBM Accessibility
+  vendorHomepage: https://www.ibm.com/
+  uniqueKey: equal-access
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA
+    - WAI-ARIA 1.2
+  jsonReport: https://unpkg.com/accessibility-checker-engine@next/act-report-v2.json
+  description: |
+    ACT rule results were generated using the latest `accessibility-checker` 
+    from NPM using the [ACT test driver](https://github.com/IBMa/equal-access/tree/master/accessibility-checker/test-act-w3).
+    Results were created using the `preview` archive and the `IBM_Accessibility` policy.
+    Mappings from ACT Rules to Accessibility Checker rule ids and reason codes can be 
+    found in the act property of [rule definitions](https://github.com/IBMa/equal-access/blob/master/accessibility-checker-engine/src/v4/rules). 
+    Results indicate the rule ids and reason codes related to the ACT rule are generated in the following format: 
+
+    `RuleId1:ReasonCode1,ReasonCode2|RuleId2:ReasonCode3,ReasonCode4`.
+
+- name: ember-template-lint
+  vendor: contributors in the Ember.js community
+  uniqueKey: ember-template-lint
+  type: Linter
+  standards: 
+    - WCAG 2.0 Level A, AA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/act-rules/act-shared-reports/main/reports/ember-template-lint/ember-earl.json
+  description: |
+    Test cases that require scripts or CSS are skipped and reported as cantTell.
+    Like all linters, Ember-template-lint does static code analysis, and so does
+    not run scripts or render CSS.
+
+- name: QualWeb
+  homepage: http://qualweb.di.fc.ul.pt/evaluator/
+  version: 3.0.0
+  vendor: LASIGE, Faculdade de Ciências da Universidade de Lisboa
+  vendorHomepage: https://www.lasige.pt/
+  uniqueKey: qualweb
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://raw.githubusercontent.com/qualweb/ACT-implementation-report/main/qualweb-report.json
+
+- name: SortSite
+  homepage: https://www.powermapper.com/products/sortsite/
+  version: 6.45
+  vendor: PowerMapper
+  vendorHomepage: https://www.powermapper.com/
+  uniqueKey: sortsite
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://qa.powermapper.com/Tests/ACT-R/report.json
+
+- name: Total Validator (+Browser)
+  homepage: https://www.totalvalidator.com/
+  version: 17.4.0
+  vendor: Total Validator
+  vendorHomepage: https://www.totalvalidator.com/
+  uniqueKey: total-validator-browser
+  type: Automated tool
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://www.totalvalidator.com/support/act/report_map.json
+
+- name: Total Validator
+  homepage: https://www.totalvalidator.com/
+  version: 17.4.0
+  vendor: Total Validator
+  vendorHomepage: https://www.totalvalidator.com/
+  uniqueKey: total-validator
+  type: Linter
+  standards:
+    - WCAG 2.1 Level A, AA, AAA
+    - WAI-ARIA 1.2
+  jsonReport: https://www.totalvalidator.com/support/act/report_src.json
+
+- name: Trusted Tester
+  vendor: US federal government
+  uniqueKey: trusted-tester
+  type: Test methodology
+  standards:
+    - WCAG 2.0 Level A, AA
+  jsonReport: https://raw.githubusercontent.com/Section508Coordinators/act-tt/main/act-trusted-tester.json

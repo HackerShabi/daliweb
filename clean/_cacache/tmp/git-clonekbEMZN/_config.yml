@@ -1,0 +1,81 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Web Accessibility Initiative (WAI)"
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  The Website of the World Wide Web Consortium’s Web Accessibility Initiative.
+baseurl: "/wcag-act-rules" # the subpath of your site, e.g. /blog
+url: "https://w3c.github.io" # the base hostname & protocol for your site
+twitter:
+  username: w3c_wai
+author: w3c_wai
+exclude:
+  - "_external"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "w3c.json"
+
+# Build settings
+markdown: kramdown
+kramwdown:
+  toc_levels: 2..3
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+repository: w3c/wcag-act-rules
+
+ytkey: AIzaSyCiZ9uToWu9jb7BTx47NtzCvmGGXKXp8nI
+
+remote_theme: w3c/wai-website-theme
+
+collections:
+  wai-wcag-act-rules-patterns:
+    title: Glossary
+    permalink: /:collection/:name/
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      class: tight-page
+      layout: act_rule
+      external_css: /content-assets/wcag-act-rules/act-styles.css
+      feedbackmail: group-act-rules@w3.org # NEW: delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
+      footer: >   # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
+        <p><strong>Date:</strong> Updated @@ Month 2021. First published Month 20@@.</p>
+        <p><strong>Editors:</strong> @@name, @@name. <strong>Contributors:</strong> @@name, @@name, and <a href="https://www.w3.org/groups/wg/@@wg/participants">participants of the @@WG</a>. ACKNOWLEDGEMENTS lists contributors and credits.</p>
+        <p>Developed by the @@ Working Group (<a href="http://www.w3.org/WAI/@@/">@@WG</a>). Developed as part of the <a href="https://www.w3.org/WAI/@@/">WAI-@@ project</a>, @@co-funded by the European Commission.</p>
+      type_of_guidance: "ACT Rule"
+      rule_meta:
+        rule_type: "Atomic rule"
+      sidebar: true
+      ## @@@ IMPORTANT @@@: Change to the config file need to be manually copied over to the WAI website
+      standalone_resource_header:
+        title: ACT Rules
+        title-ref: /standards-guidelines/act/rules/
+        subtitle: Rules for accessibility conformance testing (ACT)
+      standalone_resource_nav_links:
+        - name: All Rules
+          ref: /standards-guidelines/act/rules/
+        - name: About
+          ref: /standards-guidelines/act/rules/about/
+        - name: Implementations
+          ref: /standards-guidelines/act/implementations/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - wai-website-plugin

@@ -1,0 +1,6 @@
+_site
+.*-cache
+.jekyll-metadata
+.DS_Store
+.netlify
+node_modules
